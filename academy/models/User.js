@@ -34,18 +34,6 @@ const User = sequelize.define('User', {
     password: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            len: {
-                args: [8, 16],
-                message: "Password must be between 8 and 50 characters long",
-            },
-            isValidPassword(value) {
-                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-                if (!passwordRegex.test(value)) {
-                    throw new Error("Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
-                }
-            }
-        },
     },
 
     roleId: {
