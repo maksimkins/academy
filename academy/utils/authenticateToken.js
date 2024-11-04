@@ -15,6 +15,8 @@ const authenticateToken = (req, res, next) => {
             name: user.name,
             surname: user.surname,
             email: user.email,
+            roleId: user.roleId,
+            role: user.role,
         };
 
         next();

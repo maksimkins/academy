@@ -17,6 +17,9 @@ app.use('/api/identity', identityRoutes);
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/user', userRoutes);
 
+const groupRoutes = require('./routes/groupRoutes');
+app.use('/api/group', groupRoutes);
+
 sequelize.sync().then(() => {
 
     createRoles();

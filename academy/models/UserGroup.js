@@ -19,7 +19,14 @@ const UserGroup = sequelize.define('UserGroup', {
             model: Group,
             key: 'id'
         }
-    }
+    },
+}, {
+    indexes: [
+        {
+            unique: true,
+            fields: ['userId', 'groupId']
+        }
+    ]
 });
 
 
