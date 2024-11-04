@@ -1,12 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const http = require('http');
 
 const sequelize = require('./config/database');
 const createRoles = require('./utils/createRoles') 
+const setUpMessageSocket = require('./sockets/messageSocket');
 
 const app = express();
-
+const server = http.createServer(app);
+setUpMessageSocket(server);
 
 app.use(bodyParser.json());
 app.use(cors());      
