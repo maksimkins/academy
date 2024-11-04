@@ -1,5 +1,3 @@
-const Role = require('../models/Role');
-
 const User = require('../models/User'); 
 const Group = require('../models/Group');
 const UserGroup = require('../models/UserGroup');
