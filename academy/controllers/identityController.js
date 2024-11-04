@@ -16,7 +16,7 @@ const register =  async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
         
-        const defaultRole = await Role.findOne({ name: 'User' });
+        const defaultRole = await Role.findOne({ where: {name: 'User'} });
 
         const newUser = new User({
             name,
@@ -52,7 +52,7 @@ const login = async (req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
 
-        const token = jwt.sign({ id: user._id, name: user.name, surname: user.surname, email:user.email, role: user.role.name}, 
+        const token = jwt.sign({ id: user.id, name: user.name, surname: user.surname, email:user.email, role: user.role.name}, 
             JWT_SECRET, 
             { expiresIn: '1h' });
 
