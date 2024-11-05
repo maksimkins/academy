@@ -17,6 +17,9 @@ app.use(cors());
 const identityRoutes = require('./routes/identityRoutes');
 app.use('/api/identity', identityRoutes);
 
+const homeworkRoutes = require('./routes/homeworkRoutes');
+app.use('/api/hw', homeworkRoutes);
+
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/user', userRoutes);
 

@@ -3,7 +3,6 @@ const fs = require('fs');
 
 const User = require('../models/User')
 
-
 function getFileExtension(mimeType) {
     const mimeToExt = {
         'image/jpeg': 'jpg',
@@ -72,7 +71,6 @@ const setAvatar = async (req, res) => {
     }
 };
 
-
 const getAvatar = async (req, res) => {
     try{
         const userId = req.user.id;
@@ -97,7 +95,6 @@ const getAvatar = async (req, res) => {
         return res.status(500).json(err);
     }
 };
-
 
 const about = async (req, res) => {
     const userId = req.user.id;
