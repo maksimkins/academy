@@ -7,5 +7,6 @@ const authorizeRole = require('../utils/authorizeRole');
 
 
 router.post('/', [authenticateToken, authorizeRole('Teacher')], homeworkController.createHomework);
+router.post('/upload', [authenticateToken, authorizeRole('User'), homeworkController.upload.single('file')], homeworkController.uploadHW);
 
 module.exports = router;

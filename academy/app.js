@@ -20,6 +20,9 @@ app.use('/api/identity', identityRoutes);
 const homeworkRoutes = require('./routes/homeworkRoutes');
 app.use('/api/hw', homeworkRoutes);
 
+const markRoutes = require('./routes/markRoutes');
+app.use('/api/mark', markRoutes);
+
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/user', userRoutes);
 
